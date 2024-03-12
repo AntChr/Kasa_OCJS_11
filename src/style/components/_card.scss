@@ -1,0 +1,76 @@
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 769px) and (max-width: 992px) {
+        @content
+    }
+}
+.logement-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px 50px;
+    width: 1128px;
+    padding: 56px;
+    margin-bottom: 30px;
+    background-color: #f7f7f7;
+    border-radius: 25px;
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: auto;
+        background-color: #FFFFFF;
+        padding: 0px;
+    }
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: auto;
+        gap: 30px
+    }
+    
+    &_card {
+        width: 340px;
+        height: 340px;
+
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            width: auto;
+        }
+        
+    }
+    &_img{
+        width: 100%;
+        height: 340px;
+        border-radius: 10px;
+        object-fit: cover;
+
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            width: 100%;
+        }
+    }
+    a{
+        text-decoration: none;
+    }
+    &_txt{
+        position: relative;
+        bottom: 55px;
+        left: 6%;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 142.6%;
+        color: #FFFFFF;
+    }
+}

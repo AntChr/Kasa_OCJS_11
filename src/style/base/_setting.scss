@@ -1,0 +1,33 @@
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 769px) and (max-width: 992px) {
+        @content
+    }
+}
+
+body {
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+main {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 30px 0 30px;
+    width: 100%;
+
+    @include mobile {
+        padding: 0px 20px 0px 20px;
+        width: 90%;
+    }
+
+    @include tablet {
+        width: 90%;
+    }
+}

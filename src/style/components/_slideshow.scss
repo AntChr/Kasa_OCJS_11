@@ -1,0 +1,118 @@
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 769px) and (max-width: 992px) {
+        @content
+    }
+}
+
+.container__carroussel{
+    display: flex;
+    width: 1240px;
+    height: 415px;
+    margin-bottom: 30px;
+
+    border-radius: 25px;
+    white-space: nowrap;
+    transform: ease 1000ms;
+    @include mobile {
+        width: auto;
+        max-height: 255px;
+    }
+    @include tablet {
+        width: auto;
+    }
+    &__backgroundimg{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+    }
+    &__left{
+        position: absolute;
+        left: 20%;
+        transform: translate(0,200%);
+        cursor: pointer;
+
+        @include mobile {
+            max-width: 12px;
+            max-height: 20px;
+
+            left: 6%;
+            transform: translate(0,600%);
+        }
+        @include tablet {
+            max-width: 24px;
+            max-height: 40px;
+
+            left: 8%;
+            transform: translate(0,500%)
+        }
+        img{
+            @include mobile {
+                width: 100%;
+                height: 100%;
+            }
+            @include tablet {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__right{
+        position: absolute;
+        right: 20%;
+        transform: translate(0,200%);
+        cursor: pointer;
+        @include mobile {
+            max-width: 12px;
+            max-height: 20px;
+
+            right: 6%;
+            transform: translate(0,600%);
+        }
+        @include tablet {
+            max-width: 24px;
+            max-height: 40px;
+
+            right: 8%;
+            transform: translate(0,500%)
+        }
+        img{
+            @include mobile {
+                width: 100%;
+                height: 100%;
+            }
+            @include tablet {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__pagenumber{
+        position: absolute;
+        bottom: -20%;
+        left: 50%;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 142.6%;
+
+        color: #FFFFFF;
+
+        @include mobile{
+            display: none;
+        }
+
+    }
+}

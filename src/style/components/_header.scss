@@ -1,0 +1,95 @@
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    height: 68px;
+    padding: 80px 30px 40px 30px;
+    margin: auto;
+    
+    @include mobile {
+        align-items: center;
+        width: 90%;
+        padding: 0px;
+        margin: 20px;
+    }
+    .Header_logo {
+        display: flex;
+        justify-content: left;
+        
+        img{
+        @include mobile {
+            padding-left: 10px;
+            max-width: 145px;
+            max-height: 47px;
+        }
+        }
+    }
+
+    nav {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+
+    @include mobile {
+        max-width: 140px;
+        max-height: 17px;
+    }
+
+
+
+    .Header_Accueil{
+        margin-right: 50px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 142.6%;
+
+        
+        text-decoration-line: underline;
+
+    color: #FF6060;
+
+    @include mobile {
+        max-width: 59px;
+        max-height: 17px;
+        margin-right: 10px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 142.6%;
+    }
+
+    }
+
+
+    .Header_Apropos{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142.6%;
+
+
+    text-align: right;
+
+    color: #FF6060;
+    @include mobile {
+        max-width: 71px;
+        max-height: 17px;
+        margin-left: 10px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 142.6%;
+    }
+    }
+    }
+}
