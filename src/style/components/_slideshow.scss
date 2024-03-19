@@ -11,6 +11,7 @@
 }
 
 .container__carroussel{
+    position: relative;
     display: flex;
     width: 1240px;
     height: 415px;
@@ -38,7 +39,7 @@
     }
     &__left{
         position: absolute;
-        left: 20%;
+        left: 5%;
         transform: translate(0,200%);
         cursor: pointer;
 
@@ -69,7 +70,7 @@
     }
     &__right{
         position: absolute;
-        right: 20%;
+        right: 5%;
         transform: translate(0,200%);
         cursor: pointer;
         @include mobile {
@@ -99,7 +100,7 @@
     }
     &__pagenumber{
         position: absolute;
-        bottom: -20%;
+        bottom: 5%;
         left: 50%;
 
         font-family: 'Montserrat';

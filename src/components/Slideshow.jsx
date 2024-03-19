@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import '../style/components/_slideshow.scss'
 import vectorleft from '../images/vectorleft.png'
 import vectorright from '../images/vectorright.png'
-import PropTypes from 'prop-types';
+
 
 
 
@@ -34,23 +34,23 @@ const Slideshow = ({slides}) => {
     },[currentIndex])
 return (
     <div className="container__carroussel">
-        <div className="container__carroussel__left" onClick={goToPrevious}>
-            <img  src={vectorleft} alt="précédent" />
-        </div>
+        
         <div className="container__carroussel__backgroundimg">
             <img src={slides[currentIndex]} alt="location"/>
+        </div>
+        { slides.length > 1 ? <>    
+        <div className="container__carroussel__left" onClick={goToPrevious}>
+            <img  src={vectorleft} alt="précédent" />
         </div>
         <div className="container__carroussel__right" onClick={goToNext}>
             <img  src={vectorright} alt="suivante" />
         </div>
         <div className="container__carroussel__pagenumber">
             {`${currentIndex + 1}/${slides.length}`}
-        </div>
+        </div> </> : <></> }
+      
     </div>
 
 )
 }
-Slideshow.propTypes = {
-    slides: PropTypes.string.isRequired,
-};
 export default Slideshow

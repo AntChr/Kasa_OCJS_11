@@ -1,13 +1,12 @@
 import vectorup from '../images/vectorup.png';
 import vectordown from '../images/vectordown.png';
-import PropTypes from 'prop-types';
 import { useState} from 'react'
 import '../style/components/_collapseapp.scss'
 
 
 
 const CollapseApp = ({titre, description}) => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
 
     return isOpen ? (
         <div>
@@ -36,10 +35,6 @@ const CollapseApp = ({titre, description}) => {
         </div>
      )
 }
-CollapseApp.propTypes = {
-    titre: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-};
 
 export default CollapseApp
 

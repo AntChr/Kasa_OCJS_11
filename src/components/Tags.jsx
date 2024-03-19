@@ -1,8 +1,3 @@
-import PropTypes from 'prop-types';
-
-Tags.propTypes = {
-    tags: PropTypes.string.isRequired,
-};
 
 const Tags = ({tags}) => {
 

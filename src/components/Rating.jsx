@@ -1,6 +1,5 @@
 import Star from '../images/Star.png';
 import Starempty from '../images/Starempty.png';
-import PropTypes from 'prop-types';
 
 
 const Rating = ({rating}) => {
@@ -19,7 +18,4 @@ const Rating = ({rating}) => {
         </div>
     )
 }
-Rating.propTypes = {
-    rating: PropTypes.string.isRequired,
-};
 export default Rating
